@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox - Grundlagen</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Flexbox - Grundlagen</h1>
+
+        <p>
+            Flexbox ist dafür da, mehrere Elemente ordentlich 
+            nebeneinander oder untereinander anzuordnen und auszurichten.
+        </p>
+    </header>
+
+    <hr>
+
+    <main>
+        <h2>1. Flexbox einschalten</h2>
+
+        <p>Flexbox wird auf dem <strong>Eltern-Element</strong> aktiviert: 
+            <code>display: flex</code>. Die direkten Kinder werden zu "Flex-Items".</p>
+
+        <section class="flex-row">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <pre>
+            .flex-row{
+                display: flex;          -> Aktiviert das alle Items nebeneinander statt untereinander stehen
+                flex-direction: row;
+                border: 2px solid #eee;
+                padding: 8px;
+            }
+        </pre>
+
+        <hr>
+
+        <h2>2. Richtungen: row VS column</h2>
+
+        <p>
+            Mit <code>flex-direction</code> bestimmt man die Ausrichtung:
+            <strong>row</strong> = nebeneinander und <strong>column</strong> = untereinander.
+        </p>
+
+        <section class="flex-row">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <section class="flex-column">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <pre>
+            .flex-row{
+                display: flex;          -> Aktiviert Flexbox
+                flex-direction: row;    -> Items stehen nebeneinander
+            }
+
+            .flex-column{
+                display: flex;          -> Aktiviert Flexbox
+                flex-direction: column; -> Items stehen untereinander
+            }
+        </pre>
+
+        <hr>
+
+        <h2>2. Abstände zwischen den Items: <code>gap</code></h2>
+
+        <p>
+            <code>gap</code> macht gleichmäßige Abstände zwischen den Elementen (Items).
+        </p>
+
+        <section class="flex-row gap">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <pre>
+            .gap{
+                gap: 12px;      -> gleichmäßige Abstände zw. den Elementen/ Items
+            }
+        </pre>
+
+        <hr>
+
+        <h2>4. Ausrichtung auf der Hauptachse: <code>justify-content</code></h2>
+
+        <p>
+            Verteilt die Items/ Elemente entlang der Hauptachse (meist horizontal).
+        </p>
+
+        <h3>Platz dazwischen</h3>
+        <section class="flex-row jc-space">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <pre>
+            .jc-space{
+                justify-content: space-between;
+            }
+        </pre>
+
+        <h3>Alles nach links</h3>
+        <section class="flex-row jc-space-fs">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <pre>
+            .jc-space-fs{
+                justify-content: flex-start;
+            }
+        </pre>
+
+        <h3>Alles in die Mitte</h3>
+        <section class="flex-row jc-space-c">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <pre>
+            .jc-space-c{
+                justify-content: center;
+            }
+        </pre>
+
+        <h3>Alles nach rechts</h3>
+        <section class="flex-row jc-space-fe">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+        </section>
+
+        <pre>
+            .jc-space-fe{
+                justify-content: flex-end;
+            }
+        </pre>
+
+        <hr>
+
+        <h2>5. Ausrichtung auf der Querachse: <code>align-items</code></h2>
+
+        <p>
+            Richtet die Elemente/ Items auf der Querachse aus (meist vertikal.)
+        </p>
+
+        <section class="flex-row ai-center tall">
+            <article class="item">Oben/ Mittig</article>
+            <article class="item big">Größer</article>
+            <article class="item">Oben/ Mittig</article>
+        </section>
+
+        <pre>
+            .ai-center{
+                align-items: center;
+            }
+        </pre>
+
+        <hr>
+
+        <h2>6. Umbruch erlauben: <code>flex-wrap</code></h2>
+
+        <p>
+            Mit <code>flex-wrap: wrap</code> dürfen Items/ Elemente 
+            in die nächste Zeile gesetzt werden.
+        </p>
+
+        <section class="flex-row wrap">
+            <article class="item wide">1</article>
+            <article class="item wide">2</article>
+            <article class="item wide">3</article>
+            <article class="item wide">4</article>
+            <article class="item wide">5</article>
+        </section>
+
+        <pre>
+            .wrap{
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+        </pre>
+
+        <hr>
+
+        <h2>7. Items/ Elemente flexible breiter machen: <code>flex (grow)</code></h2>
+
+        <p>
+            Mit <code>flex: 1</code> teilen sich Elöemente/ Items den Platz gleichmäßig ein.
+        </p>
+
+        <section class="flex-row grow">
+            <article class="item grow1">Flex 1</article>
+            <article class="item grow1">Flex 1</article>
+            <article class="item grow1">Flex 1</article>
+        </section>
+
+        <pre>
+            .grow1{
+                flex: 1;
+                background-color: forestgreen;
+            }
+        </pre>
+
+        <section class="flex-row grow">
+            <article class="item grow1">Flex 1</article>
+            <article class="item grow2">Flex 4</article>
+            <article class="item grow1">Flex 1</article>
+        </section>
+
+        <pre>
+            .grow2{
+                flex: 4;
+                background-color: tomato;
+            }
+        </pre>
+
+        <hr>
+
+        <h2>8. Typische Anwendungen (Use Cases)</h2>
+        <ul>
+            <li>Navigation</li>
+            <li>Bilder bzw. Karten nebeneinander</li>
+            <li>Header: Logo links, Menü rechts etc.</li>
+            <li>Splaten-Layout (Sidebar + Content)</li>
+        </ul>
+    </main>
+</body>
+</html>

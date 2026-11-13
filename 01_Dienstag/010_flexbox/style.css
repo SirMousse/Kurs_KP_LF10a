@@ -1,0 +1,90 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 16px;
+}
+
+/* Allgemeine Einstellung für die Klasse Item*/
+.item{
+    border: 2px solid #ccc;
+    padding: 10px;
+    background: #f7f7f7;
+}
+
+/*Flex Container*/
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #eee;
+    padding: 8px;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #eee;
+    padding: 8px;
+}
+
+/*Abstände mit gap*/
+.gap{
+    gap: 12px;
+}
+
+/*Ausrichten mit justify-content*/
+.jc-space{
+    justify-content: space-between;
+}
+
+.jc-space-fs{
+    justify-content: flex-start;
+}
+
+.jc-space-c{
+    justify-content: center;
+}
+
+.jc-space-fe{
+    justify-content: flex-end;
+}
+
+/*Ausrichtung mit align-items*/
+.ai-center{
+    align-items: center;
+}
+
+/* Veränderung der Items*/
+.tall{
+    min-height: 80px;
+}
+
+.big{
+    padding: 20px;
+    background-color: yellowgreen;
+}
+
+/*Umbruch erlauben mit wrap*/
+.wrap{
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wide{
+    width: 140px;
+    background-color: cornflowerblue;
+}
+
+/* Flexible breite anpassen*/
+.grow{
+    gap: 8px;
+}
+
+.grow1{
+    flex: 1;
+    background-color: forestgreen;
+}
+
+.grow2{
+    flex: 4;
+    background-color: tomato;
+}
